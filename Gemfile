@@ -71,4 +71,7 @@ gem "geocoder"
 
 gem "figaro"
 
+# add carrierwave gem for uploading photos
+gem 'carrierwave', '~> 1.0'
+
 
