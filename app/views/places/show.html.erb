@@ -34,6 +34,11 @@
 <br />
 
   <div class="float-right" id="edit_destroy">
+    <!-- Button trigger photo modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#my_photo_modal">
+      Add a photo
+    </button>
+
     <% if current_user && current_user == @place.user %>
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
       <%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %>
@@ -42,7 +47,7 @@
   </div>
   <div class="clear"></div>
   <br />
-<!-- Modal -->
+<!-- Photo Modal -->
 <div class="modal fade" id="my_photo_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -68,23 +73,19 @@
 
 <div>
   <h1 class="float-left">Photos</h1>
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#my_photo_modal">
-    Add a photo
-  </button>
+  
 </div>
 
 <div class="clear"></div>
 
 <div class="row">
-<% @place.photos.each do |photo| %>
+  <% @place.photos.each do |photo| %>  
   <div class="col-12 col-sm-6">
-    <!--div-->
-      <!--blockquote-->
-        <%= image_tag photo.picture %>
+      <%= image_tag photo.picture %>
+      <div class="caption-box">
         <%= photo.caption %>
-      <!--/blockquote-->
-    <!--/div-->
+      </div>
+    
   </div>
 <% end %>
 </div>
@@ -92,7 +93,7 @@
 <div class = "clear"></div>
 <br />
 
-<!-- Modal -->
+<!-- Comment Modal -->
 <div class="modal fade" id="my_comment_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -117,7 +118,7 @@
 </div>
 <div class="col-10 offset-1">
   <h1 class="float-left">Comments</h1>
-  <!-- Button trigger modal -->
+  <!-- Button trigger comment modal -->
   <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#my_comment_modal">
     Add a comment
   </button>
