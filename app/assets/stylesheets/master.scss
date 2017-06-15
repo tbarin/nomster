@@ -44,6 +44,27 @@ body {
   font-size: 15px;
 }
 
+a.next_page {
+  margin-left: 60px;
+}
+
+a.previous_page {
+  margin-right: 50px;
+}
+
+span.previous_page.disabled {
+  margin-right: 50px;
+}
+
+span.next_page.disabled {
+  margin-left: 50px;
+}
+
+em.current {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .help-block {
   color: #ff3333;
   background-color: #FFEEEE;
@@ -100,7 +121,7 @@ img {
 
 .carousel-inner > .carousel-item > img, .carousel-inner > .carousel-item > a > img {
   width: 100%;
-  height: auto;
+  max-height: 550px;
   overflow: auto;
   transform: scale(1);
 }
